@@ -1,9 +1,11 @@
-function replaceAllImageSrc(newSrc) {
-  var images = document.querySelectorAll("img");
-  for (var i = 0; i < images.length; i++) {
-    images[i].src = newSrc;
+function replaceAllBackgroundImages(newUrl) {
+  var divs = document.querySelectorAll("div");
+  for (var i = 0; i < divs.length; i++) {
+    if (divs[i].style.backgroundImage) {
+      divs[i].style.backgroundImage = "url(" + newUrl + ")";
+    }
   }
 }
 
-var newSrc = "https://cdn3.emoji.gg/emojis/7215_thonk.png";
-replaceAllImageSrc(newSrc);
+var newUrl = "https://cdn3.emoji.gg/emojis/7215_thonk.png";
+replaceAllBackgroundImages(newUrl);
